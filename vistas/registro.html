@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro - Sistema de Calificaciones</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background-color: #f5f8fa;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      background-color: #f9fafb;
+      color: #222;
+      display: flex;
+    }
+
+    /* Contenedor del formulario centrado */
+    form {
+      background: white;
+      max-width: 380px;
+      margin: 80px auto;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    /* Título */
+    form h2 {
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #2c3e50;
+    }
+
+    /* Inputs y select */
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form select {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1.8px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form input[type="password"]:focus,
+    form select:focus {
+      border-color: #5c9dbf;
+      outline: none;
+      box-shadow: 0 0 8px rgba(92, 157, 191, 0.4);
+    }
+
+    /* Botón */
+    form button {
+      width: 100%;
+      padding: 14px;
+      background-color: #5c9dbf;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #477f9a;
+    }
+
+    /* Texto debajo del botón */
+    form p {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Link */
+    form a {
+      color: #5c9dbf;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    form a:hover {
+      color: #477f9a;
+    }
+
+    /* Responsive */
+    @media (max-width: 420px) {
+      form {
+        margin: 40px 20px;
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <form action="../php/registrar_usuario.php" method="POST">
+    <h2>Registro de Usuario</h2>
+    <input type="text" name="nombres" placeholder="Nombres" required>
+    <input type="text" name="apellidos" placeholder="Apellidos" required>
+    <input type="email" name="email" placeholder="Correo" required>
+    <input type="password" name="contrasena" placeholder="Contraseña" required>
+    
+    <select name="rol" required>
+      <option value="">Seleccione un rol</option>
+      <option value="docente">Docente</option>
+      <option value="estudiante">Estudiante</option>
+    </select>
+    
+    <button type="submit">Registrarse</button>
+    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+  </form>
+</body>
+</html>
